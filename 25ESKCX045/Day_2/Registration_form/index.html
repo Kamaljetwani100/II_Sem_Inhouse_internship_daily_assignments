@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Registration Form</h1>
+
+    <form>
+
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter Full Name" required>
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter Email Address" required>
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter Password" required>
+
+        <label>Confirm Password</label>
+        <input type="password" placeholder="Confirm Password" required>
+
+        <label>Mobile Number</label>
+        <input type="tel" placeholder="Enter Mobile Number" required>
+
+        <label>Date of Birth</label>
+        <input type="date" required>
+
+        <label>Gender</label>
+
+        <div class="radio-group">
+
+            <label>
+                <input type="radio" name="gender"> Male
+            </label>
+
+            <label>
+                <input type="radio" name="gender"> Female
+            </label>
+
+            <label>
+                <input type="radio" name="gender"> Other
+            </label>
+
+        </div>
+
+        <label>Hobbies</label>
+
+        <div class="checkbox-group">
+
+            <label>
+                <input type="checkbox"> Coding
+            </label>
+
+            <label>
+                <input type="checkbox"> Reading
+            </label>
+
+            <label>
+                <input type="checkbox"> Cricket
+            </label>
+
+        </div>
+
+        <label>City</label>
+
+        <select required>
+
+            <option>Select City</option>
+
+            <option>Jaipur</option>
+
+            <option>Delhi</option>
+
+            <option>Mumbai</option>
+
+            <option>Ahmedabad</option>
+
+            <option>Chandigarh</option>
+
+        </select>
+
+        <label>Address</label>
+
+        <textarea rows="4" placeholder="Enter Address"></textarea>
+
+        <div class="button-group">
+
+            <button type="submit">Register</button>
+
+            <button type="reset">Reset</button>
+
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

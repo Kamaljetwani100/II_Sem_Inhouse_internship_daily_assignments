@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pravah 2026 | College Annual Festival</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Cinzel:wght@500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="pravah.css" />
+</head>
+<body>
+
+  <!-- Marigold garland motif, reused as a decorative divider throughout -->
+  <template id="toranTemplate">
+    <svg class="toran" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <pattern id="marigoldPattern" width="12.5" height="30" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="4" x2="12.5" y2="4" stroke="var(--maroon-dark)" stroke-width="0.6" />
+          <line x1="6.25" y1="4" x2="6.25" y2="15" stroke="var(--maroon-dark)" stroke-width="0.6" />
+          <circle cx="6.25" cy="18" r="4.4" fill="var(--gold)" />
+          <circle cx="6.25" cy="18" r="4.4" fill="none" stroke="var(--terracotta)" stroke-width="0.5" />
+          <circle cx="3.6" cy="15.4" r="1.4" fill="var(--gold-light)" />
+          <circle cx="8.9" cy="15.4" r="1.4" fill="var(--gold-light)" />
+          <circle cx="3.6" cy="20.6" r="1.4" fill="var(--gold-light)" />
+          <circle cx="8.9" cy="20.6" r="1.4" fill="var(--gold-light)" />
+          <circle cx="6.25" cy="18" r="1.6" fill="var(--maroon)" />
+        </pattern>
+      </defs>
+      <rect width="100" height="30" fill="url(#marigoldPattern)" />
+    </svg>
+  </template>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">Pravah</div>
+      <span class="brand-sub">वार्षिक महोत्सव · Annual College Festival</span>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#events">Events</a>
+      <a href="#profile">About</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#registration">Register</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="auth-actions">
+      <span class="user-chip" id="userChip">Guest</span>
+      <button class="button secondary auth-open" data-open="login">Login</button>
+      <button class="button primary auth-open" data-open="register">Register</button>
+      <button class="button secondary" id="logoutBtn" style="display: none;">Logout</button>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">Menu</button>
+    <div class="toran-slot" data-toran></div>
+  </header>
+
+  <div class="auth-modal" id="authModal">
+    <div class="modal-panel">
+      <button class="close-modal" id="closeModal" aria-label="Close">×</button>
+      <div class="modal-tabs">
+        <button type="button" class="tab-btn active" data-form="loginForm">Login</button>
+        <button type="button" class="tab-btn" data-form="registerForm">Register</button>
+      </div>
+      <div class="auth-forms">
+        <form class="auth-form active" id="loginForm">
+          <h3>Welcome back</h3>
+          <p class="form-sub">Sign in to continue your Pravah journey.</p>
+          <label>
+            Email
+            <input type="email" id="loginEmail" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Password
+            <input type="password" id="loginPassword" placeholder="Enter password" required />
+          </label>
+          <button type="submit" class="button primary">Login</button>
+        </form>
+        <form class="auth-form hidden" id="registerForm">
+          <h3>Join the celebration</h3>
+          <p class="form-sub">Create your account to register for events.</p>
+          <label>
+            Full Name
+            <input type="text" id="registerName" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" id="registerEmail" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Password
+            <input type="password" id="registerPassword" placeholder="Choose a password" required />
+          </label>
+          <button type="submit" class="button primary">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="eyebrow">Utsav Begins</p>
+      <h1>Pravah <span>2026</span></h1>
+      <p class="hero-devanagari">पीढ़ियों की परंपरा, हर पल में उमंग</p>
+      <p class="hero-text">Welcome to the grand annual festival where culture, sport, technology and craft share the same stage. Four days of performances, workshops, competitions and campus moments you'll carry long after the lights come down.</p>
+      <div class="hero-actions">
+        <a href="#events" class="button primary">Explore Events</a>
+        <a href="#registration" class="button secondary">Register Now</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="diya-frame">
+        <svg class="diya-art" viewBox="0 0 220 220" aria-hidden="true">
+          <ellipse cx="110" cy="150" rx="70" ry="16" fill="var(--maroon-dark)" opacity="0.35" />
+          <path d="M40 140 Q110 175 180 140 Q170 118 110 118 Q50 118 40 140 Z" fill="var(--gold)" stroke="var(--maroon-dark)" stroke-width="2" />
+          <path d="M40 140 Q110 158 180 140" fill="none" stroke="var(--maroon-dark)" stroke-width="2" />
+          <circle cx="110" cy="132" r="7" fill="var(--maroon-dark)" />
+          <g class="flame">
+            <path d="M110 128 C100 108 108 90 110 78 C112 90 122 106 112 126 C111.4 126.9 110.6 126.9 110 128 Z" fill="var(--flame-outer)" />
+            <path d="M110 122 C104 110 108 98 110 90 C112 98 118 108 112 120 Z" fill="var(--flame-inner)" />
+          </g>
+        </svg>
+        <span class="petal petal-1"></span>
+        <span class="petal petal-2"></span>
+        <span class="petal petal-3"></span>
+        <span class="petal petal-4"></span>
+      </div>
+      <div class="hero-card">
+        <div class="stat-card">
+          <h2>24+</h2>
+          <p>Festival Events</p>
+        </div>
+        <div class="stat-card">
+          <h2>12</h2>
+          <p>Participating Clubs</p>
+        </div>
+        <div class="stat-card">
+          <h2>1800+</h2>
+          <p>Attendees Expected</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="toran-slot" data-toran></div>
+
+  <section class="section intro" id="profile">
+    <div class="section-heading">
+      <span class="eyebrow">Festival Profile</span>
+      <h2>About Pravah</h2>
+    </div>
+    <div class="intro-grid">
+      <div class="intro-copy">
+        <h3>Tradition meets innovation</h3>
+        <p><em>Pravah</em> (प्रवाह) means "flow" — and that's exactly what the festival is: a current carrying music, sport, technology and craft through every corner of campus. Students, alumni and guests gather in a shared celebration, organised by the student council with every department lending a hand.</p>
+      </div>
+      <div class="profile-card">
+        <img src="photo.png" alt="Students celebrating at a college festival" />
+        <div class="profile-caption">
+          <h4>Organised by the College</h4>
+          <p>From the opening parade to the closing concert, Pravah brings performances, workshops, competitions and new friendships to every attendee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section events" id="events">
+    <div class="section-heading">
+      <span class="eyebrow">What to Expect</span>
+      <h2>Featured Events</h2>
+    </div>
+    <div class="event-grid">
+      <article class="event-card" data-tag="Cultural">
+        <div class="event-tag">Cultural</div>
+        <h3>Dance Fusion</h3>
+        <p>A colourful fusion of classical and modern dance performances by student teams.</p>
+        <div class="event-meta">
+          <span>Apr 10</span>
+          <span>5:00 PM</span>
+        </div>
+      </article>
+      <article class="event-card" data-tag="Tech">
+        <div class="event-tag">Tech</div>
+        <h3>Code Sprint</h3>
+        <p>Collaborative coding challenge for developers, UX designers and innovators.</p>
+        <div class="event-meta">
+          <span>Apr 11</span>
+          <span>10:00 AM</span>
+        </div>
+      </article>
+      <article class="event-card" data-tag="Sport">
+        <div class="event-tag">Sport</div>
+        <h3>Battle Courts</h3>
+        <p>Inter-department basketball and badminton tournaments for student athletes.</p>
+        <div class="event-meta">
+          <span>Apr 12</span>
+          <span>2:00 PM</span>
+        </div>
+      </article>
+      <article class="event-card" data-tag="Creative">
+        <div class="event-tag">Creative</div>
+        <h3>Art &amp; Media Fest</h3>
+        <p>Photo exhibits, short films and live painting by talented campus artists.</p>
+        <div class="event-meta">
+          <span>Apr 13</span>
+          <span>11:00 AM</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section schedule" id="schedule">
+    <div class="section-heading">
+      <span class="eyebrow">Plan Your Day</span>
+      <h2>Event Schedule</h2>
+    </div>
+    <div class="schedule-filters">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="Cultural">Cultural</button>
+      <button class="filter-btn" data-category="Tech">Tech</button>
+      <button class="filter-btn" data-category="Sport">Sport</button>
+      <button class="filter-btn" data-category="Creative">Creative</button>
+    </div>
+    <div class="schedule-list" id="scheduleList">
+      <div class="schedule-item" data-category="Cultural">
+        <span class="schedule-dot"></span>
+        <div class="schedule-info">
+          <h4>Opening Parade</h4>
+          <p>Central Stage</p>
+        </div>
+        <span class="schedule-time">Apr 10 · 9:00 AM</span>
+      </div>
+      <div class="schedule-item" data-category="Tech">
+        <span class="schedule-dot"></span>
+        <div class="schedule-info">
+          <h4>Innovators Panel</h4>
+          <p>Auditorium</p>
+        </div>
+        <span class="schedule-time">Apr 10 · 11:00 AM</span>
+      </div>
+      <div class="schedule-item" data-category="Sport">
+        <span class="schedule-dot"></span>
+        <div class="schedule-info">
+          <h4>Intercollege Basketball</h4>
+          <p>Sports Arena</p>
+        </div>
+        <span class="schedule-time">Apr 10 · 1:00 PM</span>
+      </div>
+      <div class="schedule-item" data-category="Creative">
+        <span class="schedule-dot"></span>
+        <div class="schedule-info">
+          <h4>Live Sketch Jam</h4>
+          <p>Art Studio</p>
+        </div>
+        <span class="schedule-time">Apr 11 · 4:00 PM</span>
+      </div>
+      <div class="schedule-item" data-category="Cultural">
+        <span class="schedule-dot"></span>
+        <div class="schedule-info">
+          <h4>Music Night</h4>
+          <p>Main Stage</p>
+        </div>
+        <span class="schedule-time">Apr 11 · 7:00 PM</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section registration" id="registration">
+    <div class="section-heading">
+      <span class="eyebrow">Get Involved</span>
+      <h2>Book Your Spot</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="registration-info">
+        <h3>Event Team</h3>
+        <p>Email: pravah@college.edu</p>
+        <p>Phone: +91 98765 43210</p>
+        <p class="note">Please login before registering for an event.</p>
+      </div>
+      <form class="contact-form invite-card" id="registrationForm">
+        <label>
+          Name
+          <input type="text" id="nameInput" placeholder="Your name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" id="emailInput" placeholder="Your email" required />
+        </label>
+        <label>
+          Event Interest
+          <select id="eventSelect">
+            <option>Dance Fusion</option>
+            <option>Code Sprint</option>
+            <option>Battle Courts</option>
+            <option>Art &amp; Media Fest</option>
+          </select>
+        </label>
+        <button type="submit" class="button primary">Register Now</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section dashboard" id="dashboard">
+    <div class="section-heading">
+      <span class="eyebrow">Member Dashboard</span>
+      <h2>My Registrations</h2>
+    </div>
+    <div class="dashboard-panel">
+      <div class="dashboard-card">
+        <h3>Logged in as</h3>
+        <p id="dashboardName">Guest</p>
+        <p id="dashboardEmail">Not signed in</p>
+      </div>
+      <div class="dashboard-card">
+        <h3>Upcoming registrations</h3>
+        <ul class="registration-list" id="registrationList">
+          <li class="empty-state">Login and register to see your events here.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="toran-slot toran-slot-footer" data-toran></div>
+
+  <footer class="footer" id="contact">
+    <p class="footer-line">Pravah 2026 · Woven in tradition, alive with colour</p>
+    <p class="footer-rights">All rights reserved</p>
+  </footer>
+
+  <script src="pravah.js"></script>
+</body>
+</html>

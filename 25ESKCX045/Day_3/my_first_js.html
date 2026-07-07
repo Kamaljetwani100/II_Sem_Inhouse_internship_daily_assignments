@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+
+    
+</head>
+
+<body>
+    <div>
+
+        <h1>Today Date</h1>
+        <button type="button" onclick="document.getElementById('demo').innerHTML=Date">
+            Click here to get date
+
+        </button>
+        <div id="demo"></div>
+    </div>
+
+<script>
+    function DisplayDate(){
+        const Today = new Date();
+        document.getElementById('demo').innerHTML = today.toDateString();
+
+    }
+</script>
+
+</body>
+
+
+
+
+
+
+</html>

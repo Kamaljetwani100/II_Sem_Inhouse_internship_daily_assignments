@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../bootstrap.min.js"></script>
+</head>
+
+
+<body class="bg-light">
+<div class="container py-5">
+    <h2 class=""text-center mb-4>Student Records</h2>
+    <input type="text" id="search" class="form-control mb-4"
+    placeholder="Search student">
+    <div id="container" class="row g-4"></div>
+
+</div>
+
+<script>
+const students = [
+    { name: "Rahul", branch: "CSE", cgpa: 8.4 },
+    { name: "Amit", branch: "ECE", cgpa: 7.2 },
+    { name: "Rahul", branch: "IT", cgpa: 9.4 },
+    { name: "Asif", branch: "IT", cgpa: 9.0 },
+    { name: "Disha", branch: "IT", cgpa: 8.0 },
+    { name: "Dheeraj", branch: "IT" }
+];
+
+const container = document.getElementById("container");
+
+let html = "";
+
+for (let i = 0; i < students.length; i++) {
+
+    html += `
+    <div class="col-md-4 card-item">
+        <div class="card shadow">
+            <div class="card-body">
+                
+                <h4>${students[i].name}</h4>
+
+                <button class="btn btn-primary btn-sm mt-2"
+                    onclick="toggleDetails(this)">
+                    Show Details
+                </button>
+
+                <div class="details mt-3" style="display:none;">
+                    <p><strong>Branch:</strong> ${students[i].branch}</p>
+                    <p><strong>CGPA:</strong> ${students[i].cgpa}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    `;
+}
+
+container.innerHTML = html;
+
+function toggleDetails(button) {
+
+    const details = button.nextElementSibling;
+
+    if (details.style.display === "none") {
+        details.style.display = "block";
+        button.innerText = "Hide Details";
+    } else {
+        details.style.display = "none";
+        button.innerText = "Show Details";
+    }
+}
+
+const search = document.getElementById("search");
+
+search.addEventListener("keyup", function () {
+
+    const value = this.value.toLowerCase();
+
+    const cards = document.querySelectorAll(".card-item");
+
+    cards.forEach((card, index) => {
+
+        const student = students[index];
+
+        if (
+            student.name.toLowerCase().includes(value) ||
+            student.branch.toLowerCase().includes(value)
+        ) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+
+</script>
