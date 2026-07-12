@@ -1,0 +1,185 @@
+body{
+    background:#f4f6f9;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+header{
+    background:#0d6efd;
+}
+
+.logo-img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+
+.logo h1{
+    color:#fff;
+    font-size:28px;
+    margin:0;
+}
+
+.nav-link{
+    color:#fff !important;
+    font-weight:500;
+}
+
+.nav-link:hover{
+    color:#dbe7ff !important;
+}
+
+.form-box{
+    max-width:450px;
+    margin:60px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+.form-box h3{
+    text-align:center;
+    margin-bottom:25px;
+    color:#0d6efd;
+}
+
+.form-control{
+    margin-bottom:15px;
+}
+
+.form-control:focus{
+    box-shadow:none;
+    border-color:#0d6efd;
+}
+
+.form-label{
+    font-weight:600;
+}
+
+.btn{
+    width:100%;
+}
+
+.btn-primary{
+    background:#0d6efd;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#0b5ed7;
+}
+
+.btn-warning{
+    color:#fff;
+}
+
+.btn-danger{
+    color:#fff;
+}
+
+.alert{
+    margin-bottom:15px;
+}
+
+.card{
+    border:none;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+    margin-bottom:20px;
+}
+
+.card-header{
+    background:#0d6efd;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+}
+
+.card-body{
+    padding:25px;
+}
+
+.table{
+    background:#fff;
+}
+
+.table th{
+    background:#0d6efd;
+    color:#fff;
+    text-align:center;
+}
+
+.table td{
+    vertical-align:middle;
+}
+
+.list-group-item{
+    font-weight:500;
+}
+
+.list-group-item:hover{
+    background:#0d6efd;
+    color:#fff;
+}
+
+.list-group-item.active{
+    background:#0d6efd;
+    border-color:#0d6efd;
+}
+
+footer{
+    margin-top:50px;
+}
+
+footer p{
+    margin:0;
+}
+
+.container{
+    margin-top:20px;
+}
+
+h2,h3,h4,h5{
+    color:#333;
+}
+
+a{
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:none;
+}
+
+input[type=file]{
+    padding:8px;
+}
+
+table{
+    margin-top:15px;
+}
+
+@media(max-width:768px){
+
+.logo h1{
+    font-size:22px;
+}
+
+.form-box{
+    margin:20px;
+    padding:20px;
+}
+
+.card-body{
+    padding:18px;
+}
+
+.list-group{
+    margin-bottom:20px;
+}
+
+.btn{
+    margin-bottom:10px;
+}
+
+}
