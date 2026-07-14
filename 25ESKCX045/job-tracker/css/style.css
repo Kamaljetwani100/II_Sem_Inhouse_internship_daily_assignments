@@ -1,0 +1,172 @@
+:root {
+    --primary-color: #2b3a67;      
+    --accent-color: #4e8098;       
+    --bg-light: #f4f6f9;           
+    --sidebar-bg: #1f2a44;        
+    --sidebar-hover: #2b3a67;
+    --text-muted: #6c757d;
+    --border-radius: 10px;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    color: #2c2c2c;
+}
+
+/* -------------------- Auth Pages (Login/Signup) -------------------- */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+}
+
+.auth-card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 420px;
+    width: 100%;
+    padding: 2.5rem;
+}
+
+.auth-card .brand-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.auth-card .form-label {
+    font-weight: 500;
+}
+
+.btn-primary-custom {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+    color: #fff;
+}
+
+/* -------------------- Sidebar Layout (Dashboard/Jobs/Profile) -------------------- */
+.app-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    color: #fff;
+    flex-shrink: 0;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar .brand {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar .nav-link {
+    color: #cdd4e0;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border-left: 3px solid transparent;
+}
+
+.sidebar .nav-link i {
+    font-size: 1.05rem;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: var(--sidebar-hover);
+    color: #fff;
+    border-left: 3px solid var(--accent-color);
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 1.5rem 2rem;
+}
+
+.topbar {
+    background: #fff;
+    border-radius: var(--border-radius);
+    padding: 0.9rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+/* -------------------- Dashboard Stat Cards -------------------- */
+.stat-card {
+    border: none;
+    border-radius: var(--border-radius);
+    color: #fff;
+    padding: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.stat-card .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.stat-card.total { background: linear-gradient(135deg, #2b3a67, #3f5b9c); }
+.stat-card.applied { background: linear-gradient(135deg, #4e8098, #6ba3b8); }
+.stat-card.interview { background: linear-gradient(135deg, #d68910, #f0a500); }
+.stat-card.selected { background: linear-gradient(135deg, #1e8449, #2ecc71); }
+.stat-card.rejected { background: linear-gradient(135deg, #b03a2e, #e74c3c); }
+
+/* -------------------- Cards & Tables -------------------- */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.table thead {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.badge-status {
+    padding: 0.4em 0.75em;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+.badge-applied { background-color: #4e8098; color: #fff; }
+.badge-interview { background-color: #f0a500; color: #fff; }
+.badge-selected { background-color: #2ecc71; color: #fff; }
+.badge-rejected { background-color: #e74c3c; color: #fff; }
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+    .app-wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        position: relative;
+    }
+    .main-content {
+        padding: 1rem;
+    }
+}
